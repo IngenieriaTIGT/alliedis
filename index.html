@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Light House Agency - Agencia de Marketing Digital. Iluminamos tu presencia digital.">
+    <title>Light House Agency | Agencia de Marketing Digital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader Premium -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <div class="preloader-light-beam"></div>
+                <svg viewBox="0 0 100 100" width="100" height="100">
+                    <defs>
+                        <linearGradient id="lighthouseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#F4A300"/>
+                            <stop offset="100%" style="stop-color:#FFB833"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Faro simplificado -->
+                    <path d="M45 90 L45 40 L55 40 L55 90 Z" fill="url(#lighthouseGrad)"/>
+                    <path d="M40 40 L50 20 L60 40 Z" fill="url(#lighthouseGrad)"/>
+                    <circle cx="50" cy="25" r="8" fill="#F4A300" class="pulse-light"/>
+                    <!-- Rayos de luz -->
+                    <path d="M50 25 L30 10" stroke="#F4A300" stroke-width="2" opacity="0.5" class="light-ray"/>
+                    <path d="M50 25 L70 10" stroke="#F4A300" stroke-width="2" opacity="0.5" class="light-ray"/>
+                </svg>
+            </div>
+            <div class="loader"></div>
+            <div class="preloader-text">
+                <span>L</span><span>I</span><span>G</span><span>H</span><span>T</span>
+                <span>&nbsp;</span>
+                <span>H</span><span>O</span><span>U</span><span>S</span><span>E</span>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="img/logo transparente.png" alt="Light House Agency" class="logo-img">
+                <div class="logo-glow-border"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Inicio</a></li>
+                    
+                    <!-- Dropdown Nosotros -->
+                    <li class="nav-item dropdown-nav">
+                        <a class="nav-link dropdown-toggle-nav" href="#about">
+                            Nosotros
+                            <i class="fas fa-chevron-down dropdown-indicator-nav"></i>
+                        </a>
+                        <ul class="dropdown-menu-nav">
+                            <li><a href="#about"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                            <li><a href="#about"><i class="fas fa-bullseye"></i> Misión</a></li>
+                            <li><a href="#about"><i class="fas fa-eye"></i> Visión</a></li>
+                            <li><a href="#about"><i class="fas fa-heart"></i> Valores</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Dropdown Servicios -->
+                    <li class="nav-item dropdown-nav">
+                        <a class="nav-link dropdown-toggle-nav" href="services.html">
+                            Servicios
+                            <i class="fas fa-chevron-down dropdown-indicator-nav"></i>
+                        </a>
+                        <ul class="dropdown-menu-nav">
+                            <li><a href="services.html#pauta-digital"><i class="fas fa-ad"></i> Pauta Digital</a></li>
+                            <li><a href="services.html#creacion-contenido"><i class="fas fa-palette"></i> Creación de Contenido</a></li>
+                            <li><a href="services.html#community-management"><i class="fas fa-comments"></i> Community Management</a></li>
+                            <li><a href="services.html#manejo-inversion"><i class="fas fa-chart-line"></i> Manejo de Inversión</a></li>
+                            <li><a href="services.html#analisis-reportes"><i class="fas fa-file-alt"></i> Análisis y Reportes</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Aurora Effect -->
+        <div class="aurora-container">
+            <div class="aurora"></div>
+            <div class="aurora aurora-2"></div>
+        </div>
+        
+        <!-- Floating Orbs -->
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+        </div>
+        
+        <!-- Light Beams -->
+        <div class="light-beams">
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+        </div>
+        
+        <div class="hero-bg"></div>
+        <!-- Floating Particles (Burbujas) -->
+        <div class="floating-particles-bg">
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+        </div>
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <span class="hero-badge">Agencia de Marketing Digital</span>
+                        <h1 class="hero-title">
+                            <span class="typewriter-text">Iluminamos tu</span><br>
+                            <span class="text-gradient typewriter-text-2">Presencia Digital</span>
+                            <span class="typewriter-cursor"></span>
+                        </h1>
+                        <p class="hero-description">
+                            Transformamos ideas en estrategias digitales que conectan, inspiran y generan resultados extraordinarios para tu marca.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary-custom btn-magnetic btn-ripple btn-glow">
+                                Nuestros Servicios
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                            <a href="#contact" class="btn btn-outline-custom btn-magnetic btn-ripple">
+                                Contáctanos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-image float-animation">
+                        <!-- Esfera de Marketing Digital -->
+                        <div class="marketing-sphere-container">
+                            <!-- Esfera central -->
+                            <div class="sphere-core">
+                                <div class="sphere-inner"></div>
+                                <div class="sphere-glow"></div>
+                                <img src="img/logo transparente.png" alt="Light House" class="sphere-logo">
+                            </div>
+                            
+                            <!-- Iconos orbitando la esfera -->
+                            <div class="orbit-icon orbit-icon-1">
+                                <i class="fas fa-heart"></i>
+                                <span class="icon-label">Likes</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-2">
+                                <i class="fas fa-comment"></i>
+                                <span class="icon-label">Comentarios</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-3">
+                                <i class="fas fa-share"></i>
+                                <span class="icon-label">Shares</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-4">
+                                <i class="fas fa-chart-line"></i>
+                                <span class="icon-label">Alcance</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-5">
+                                <i class="fas fa-bullseye"></i>
+                                <span class="icon-label">Meta</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-6">
+                                <i class="fas fa-users"></i>
+                                <span class="icon-label">Seguidores</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-7">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span class="icon-label">ROI</span>
+                            </div>
+                            <div class="orbit-icon orbit-icon-8">
+                                <i class="fas fa-eye"></i>
+                                <span class="icon-label">Vistas</span>
+                            </div>
+                            
+                            <!-- Anillos de órbita -->
+                            <div class="sphere-ring ring-1"></div>
+                            <div class="sphere-ring ring-2"></div>
+                            <div class="sphere-ring ring-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Carrusel -->
+    <section id="about" class="about-section">
+        <!-- Fondo igual que Hero -->
+        <div class="about-dots-background">
+            <div class="hero-bg"></div>
+            <!-- Floating Particles (Burbujas) -->
+            <div class="floating-particles-bg">
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header text-center">
+                <span class="section-badge">Sobre Nosotros</span>
+                <h2 class="section-title">Somos tu <span class="text-shimmer">Faro Digital</span></h2>
+                <p class="section-description">
+                    Conoce nuestra historia, lo que nos impulsa y hacia dónde nos dirigimos.
+                </p>
+            </div>
+            
+            <!-- Carrusel de Nosotros -->
+            <div class="about-carousel-container">
+                <div class="about-carousel">
+                    <!-- Slide 1: Nosotros -->
+                    <div class="about-slide" data-index="0">
+                        <div class="about-slide-image-wrapper">
+                            <div class="about-slide-image">
+                                <img src="img/TRABAJOEQUIPO.jpg" alt="Nuestro Equipo">
+                            </div>
+                        </div>
+                        <div class="about-slide-content">
+                            <h3>¿Quiénes Somos?</h3>
+                            <p>En Light House Agency, creemos que cada marca tiene una historia única que merece ser contada de manera brillante. Somos una agencia de marketing digital apasionada por transformar la presencia online de negocios que buscan destacar.</p>
+                            <ul class="about-slide-features">
+                                <li><i class="fas fa-check-circle"></i> Equipo creativo y estratégico</li>
+                                <li><i class="fas fa-check-circle"></i> Pasión por la innovación</li>
+                                <li><i class="fas fa-check-circle"></i> Compromiso con resultados</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Misión -->
+                    <div class="about-slide" data-index="1">
+                        <div class="about-slide-image-wrapper">
+                            <div class="about-slide-image">
+                                <img src="img/mision.jpg" alt="Nuestra Misión">
+                            </div>
+
+                        </div>
+                        <div class="about-slide-content">
+                            <h3>Nuestra Misión</h3>
+                            <p>Ayudar a las marcas a contar su historia y destacar en el mundo digital a través de soluciones creativas, estratégicas y de alto impacto que generen conexiones genuinas con su audiencia.</p>
+                            <ul class="about-slide-features">
+                                <li><i class="fas fa-check-circle"></i> Soluciones creativas</li>
+                                <li><i class="fas fa-check-circle"></i> Estrategias de alto impacto</li>
+                                <li><i class="fas fa-check-circle"></i> Conexiones genuinas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: Visión -->
+                    <div class="about-slide" data-index="2">
+                        <div class="about-slide-image-wrapper">
+                            <div class="about-slide-image">
+                                <img src="img/vision.jpg" alt="Nuestra Visión">
+                            </div>
+                        </div>
+                        <div class="about-slide-content">
+                            <h3>Nuestra Visión</h3>
+                            <p>Ser el faro que guía a empresas de todos los tamaños hacia el éxito en un entorno digital en constante evolución, iluminando el camino hacia el crecimiento sostenible.</p>
+                            <ul class="about-slide-features">
+                                <li><i class="fas fa-check-circle"></i> Guía hacia el éxito</li>
+                                <li><i class="fas fa-check-circle"></i> Crecimiento sostenible</li>
+                                <li><i class="fas fa-check-circle"></i> Innovación constante</li>
+                            </ul>
+                            <!-- Valores -->
+                            <div class="values-badges">
+                                <span class="value-badge scale-pulse"><i class="fas fa-check-circle"></i> Constancia</span>
+                                <span class="value-badge scale-pulse"><i class="fas fa-check-circle"></i> Creatividad</span>
+                                <span class="value-badge scale-pulse"><i class="fas fa-check-circle"></i> Confianza</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Indicadores de progreso -->
+                <div class="about-carousel-progress">
+                    <div class="about-progress-dot active" data-index="0"></div>
+                    <div class="about-progress-dot" data-index="1"></div>
+                    <div class="about-progress-dot" data-index="2"></div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursor Personalizado -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Services Section -->
+    <section id="services" class="services-section section-padding">
+        <!-- Fondo igual que Hero -->
+        <div class="dots-background">
+            <div class="hero-bg"></div>
+            <!-- Floating Particles (Burbujas) -->
+            <div class="floating-particles-bg">
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+                <div class="floating-particle"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header text-center">
+                <span class="section-badge">Lo que hacemos</span>
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-description">
+                    Ofrecemos soluciones digitales completas diseñadas para impulsar tu marca al siguiente nivel.
+                </p>
+            </div>
+            
+            <!-- Carrusel de Servicios -->
+            <div class="services-carousel-container">
+                <div class="services-carousel">
+                    <!-- Slide 1: Pauta Digital -->
+                    <div class="service-slide" data-index="0">
+                        <div class="service-image-wrapper">
+                            <div class="service-image">
+                                <img src="img/marketingdigital.jpg" alt="Pauta Digital">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Pauta Digital</h3>
+                            <p>Planificación, desarrollo, implementación, optimización y monitoreo continuo de campañas publicitarias en Meta Ads.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Campañas en Facebook e Instagram</li>
+                                <li><i class="fas fa-check-circle"></i> Optimización de presupuesto</li>
+                                <li><i class="fas fa-check-circle"></i> Análisis de resultados</li>
+                            </ul>
+                            <a href="services.html#pauta-digital" class="service-btn">
+                                Ver más detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Creación de Contenido -->
+                    <div class="service-slide" data-index="1">
+                        <div class="service-image-wrapper">
+                            <div class="service-image">
+                                <img src="img/trabajopc.jpg" alt="Creación de Contenido">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Creación de Contenido</h3>
+                            <p>Elaboración de material gráfico para redes sociales: fotografía, diseños, producción de videos y eventos.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Fotografía profesional</li>
+                                <li><i class="fas fa-check-circle"></i> Diseño gráfico</li>
+                                <li><i class="fas fa-check-circle"></i> Producción de video</li>
+                            </ul>
+                            <a href="services.html#creacion-contenido" class="service-btn">
+                                Ver más detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: Community Management -->
+                    <div class="service-slide" data-index="2">
+                        <div class="service-image-wrapper">
+                            <div class="service-image">
+                                <img src="img/online.jpg" alt="Community Management">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Community Management</h3>
+                            <p>Publicación de contenido según calendario, atención a interacciones y mantenimiento general de redes sociales.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Gestión de redes sociales</li>
+                                <li><i class="fas fa-check-circle"></i> Atención al cliente</li>
+                                <li><i class="fas fa-check-circle"></i> Calendario de contenido</li>
+                            </ul>
+                            <a href="services.html#community-management" class="service-btn">
+                                Ver más detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Manejo de Inversión -->
+                    <div class="service-slide" data-index="3">
+                        <div class="service-image-wrapper">
+                            <div class="service-image">
+                                <img src="img/estadisticas.jpg" alt="Manejo de Inversión">
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Manejo de Inversión</h3>
+                            <p>Creación de estrategia y administración del presupuesto para pauta en redes sociales según los objetivos del cliente.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Estrategia publicitaria</li>
+                                <li><i class="fas fa-check-circle"></i> Administración de presupuesto</li>
+                                <li><i class="fas fa-check-circle"></i> Maximización de ROI</li>
+                            </ul>
+                            <a href="services.html#manejo-inversion" class="service-btn">
+                                Ver más detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5: Análisis y Reportes -->
+                    <div class="service-slide" data-index="4">
+                        <div class="service-image-wrapper">
+                            <div class="service-image">
+                                <img src="img/busqueda.png" alt="Análisis y Reportes">
+                            </div>
+
+                        </div>
+                        <div class="service-content">
+                            <h3>Análisis y Reportes</h3>
+                            <p>Reportes detallados relacionados con todos y cada uno de los proyectos para medir el éxito de las estrategias.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Métricas de desempeño</li>
+                                <li><i class="fas fa-check-circle"></i> Informes mensuales</li>
+                                <li><i class="fas fa-check-circle"></i> Recomendaciones</li>
+                            </ul>
+                            <a href="services.html#analisis-reportes" class="service-btn">
+                                Ver más detalles <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Indicadores de progreso -->
+                <div class="carousel-progress">
+                    <div class="progress-dot active" data-index="0"></div>
+                    <div class="progress-dot" data-index="1"></div>
+                    <div class="progress-dot" data-index="2"></div>
+                    <div class="progress-dot" data-index="3"></div>
+                    <div class="progress-dot" data-index="4"></div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-bg">
+            <div class="testimonials-orb testimonials-orb-1"></div>
+            <div class="testimonials-orb testimonials-orb-2"></div>
+        </div>
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Testimonios</span>
+                <h2 class="section-title">Lo que dicen <span class="text-shimmer">nuestros clientes</span></h2>
+                <p class="section-description">
+                    Historias de éxito de marcas que iluminamos juntos
+                </p>
+            </div>
+            
+            <div class="testimonials-carousel-wrapper">
+                <div class="testimonials-carousel">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">Light House transformó completamente nuestra presencia digital. Sus estrategias de marketing nos ayudaron a aumentar las ventas en un 200% en solo 6 meses.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <div class="avatar-placeholder">MC</div>
+                                <div class="avatar-glow"></div>
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>María Castillo</h5>
+                                <span>CEO, TechStore GT</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">El equipo de Light House es excepcional. Su creatividad y compromiso con nuestros proyectos superó todas nuestras expectativas. Totalmente recomendados.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <div class="avatar-placeholder">RL</div>
+                                <div class="avatar-glow"></div>
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Roberto López</h5>
+                                <span>Director, Café Aroma</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">Profesionales de primer nivel. La calidad del contenido que crearon para nuestras redes sociales elevó nuestra marca a otro nivel. ¡Gracias Light House!</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <div class="avatar-placeholder">AG</div>
+                                <div class="avatar-glow"></div>
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Ana García</h5>
+                                <span>Marketing Manager, Moda GT</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">Increíble atención al detalle y resultados medibles. Los reportes mensuales nos permiten ver exactamente cómo nuestras campañas están funcionando.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <div class="avatar-placeholder">JM</div>
+                                <div class="avatar-glow"></div>
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Jorge Méndez</h5>
+                                <span>Fundador, AutoParts GT</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-nav">
+                    <button class="testimonial-nav-btn prev-btn" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonials-dots"></div>
+                    <button class="testimonial-nav-btn next-btn" aria-label="Siguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients-section">
+        <div class="clients-bg-pattern"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Confían en nosotros</span>
+                <h2 class="section-title">Marcas que <span class="text-shimmer">iluminamos</span></h2>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="client-logo-inner">
+                        <span class="client-name">TechStore GT</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="client-logo-inner">
+                        <span class="client-name">Café Aroma</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="client-logo-inner">
+                        <span class="client-name">Moda GT</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="client-logo-inner">
+                        <span class="client-name">AutoParts</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-logo-inner">
+                        <span class="client-name">Bella Estética</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="client-logo-inner">
+                        <span class="client-name">FitGym</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-logo-inner">
+                        <span class="client-name">Delicias GT</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+                <div class="client-logo" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="client-logo-inner">
+                        <span class="client-name">Viajes GT</span>
+                    </div>
+                    <div class="client-logo-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <span class="section-badge">Contacto</span>
+                        <h2 class="section-title contact-title-animate">Hablemos de tu Proyecto</h2>
+                        <p class="contact-text-animate">Estamos listos para ayudarte a iluminar tu presencia digital. Contáctanos y comencemos a trabajar juntos.</p>
+
+                        <!-- Botones de Contacto -->
+                        <div class="contact-buttons">
+                            <a href="mailto:hola@lighthouseagency.com?subject=Información sobre servicios - Light House Agency" class="contact-btn contact-btn-email">
+                                <div class="contact-btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-btn-text">
+                                    <span class="contact-btn-label">Email</span>
+                                    <span class="contact-btn-value">hola@lighthouseagency.com</span>
+                                </div>
+                                <div class="contact-btn-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/50235971926?text=Hola,%20necesito%20información%20sobre%20sus%20servicios" target="_blank" class="contact-btn contact-btn-whatsapp">
+                                <div class="contact-btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-btn-text">
+                                    <span class="contact-btn-label">WhatsApp</span>
+                                    <span class="contact-btn-value">+502 3597-1926</span>
+                                </div>
+                                <div class="contact-btn-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+
+                            <a href="https://www.google.com/maps/search/Ciudad+de+Guatemala" target="_blank" class="contact-btn contact-btn-location">
+                                <div class="contact-btn-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-btn-text">
+                                    <span class="contact-btn-label">Ubicación</span>
+                                    <span class="contact-btn-value">Ciudad de Guatemala</span>
+                                </div>
+                                <div class="contact-btn-arrow">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mapa de Ubicación -->
+                        <div class="contact-map">
+                            <div class="map-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241940.94848732982!2d-90.6302478!3d14.6349146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1805c53c47f%3A0x7c4c5c5c5c5c5c5c!2sCiudad%20de%20Guatemala!5e0!3m2!1ses!2sgt!4v1699999999999!5m2!1ses!2sgt"
+                                    width="100%"
+                                    height="200"
+                                    style="border:0;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Tu Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Tu Email" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="">¿Qué servicio te interesa?</option>
+                                    <option value="pauta">Pauta Digital</option>
+                                    <option value="contenido">Creación de Contenido</option>
+                                    <option value="community">Community Management</option>
+                                    <option value="inversion">Manejo de Inversión</option>
+                                    <option value="reportes">Análisis y Reportes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Tu Mensaje"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-block">
+                                Enviar Mensaje
+                                <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer-premium">
+        <!-- Light Waves Effect -->
+        <div class="footer-light-waves">
+            <div class="light-wave light-wave-1"></div>
+            <div class="light-wave light-wave-2"></div>
+            <div class="light-wave light-wave-3"></div>
+        </div>
+        
+        <!-- Lighthouse Beam -->
+        <div class="footer-lighthouse-beam">
+            <div class="beam-source"></div>
+            <div class="beam-ray beam-ray-1"></div>
+            <div class="beam-ray beam-ray-2"></div>
+            <div class="beam-ray beam-ray-3"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="footer-particles">
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+            <div class="footer-particle"></div>
+        </div>
+        
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="newsletter-content">
+                            <h3 class="newsletter-title">
+                                <i class="fas fa-bell"></i>
+                                Suscríbete a nuestro newsletter
+                            </h3>
+                            <p class="newsletter-text">Recibe las últimas tendencias en marketing digital y consejos para iluminar tu marca.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form">
+                            <div class="newsletter-input-wrapper">
+                                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                                <button type="submit" class="newsletter-btn btn-magnetic">
+                                    <span>Suscribirse</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <div class="row">
+                    <!-- Brand Column -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-brand">
+                            <img src="img/logo transparente.png" alt="Light House Agency" class="footer-logo">
+                            <p class="footer-tagline">
+                                <span class="welding-text" data-text="Iluminamos tu presencia digital con estrategias innovadoras que transforman marcas."></span>
+                            </p>
+                            <div class="footer-social-premium">
+                                <a href="#" class="social-icon-3d" data-tooltip="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span class="social-icon-back"><i class="fab fa-facebook-f"></i></span>
+                                </a>
+                                <a href="#" class="social-icon-3d" data-tooltip="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span class="social-icon-back"><i class="fab fa-instagram"></i></span>
+                                </a>
+                                <a href="#" class="social-icon-3d" data-tooltip="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <span class="social-icon-back"><i class="fab fa-linkedin-in"></i></span>
+                                </a>
+                                <a href="#" class="social-icon-3d" data-tooltip="TikTok">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span class="social-icon-back"><i class="fab fa-tiktok"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links-column">
+                            <h4 class="footer-column-title">
+                                Enlaces
+                                <i class="fas fa-chevron-down dropdown-indicator"></i>
+                            </h4>
+                            <ul class="footer-links-list">
+                                <li><a href="#home"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Inicio</a></li>
+                                <li><a href="#about"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Nosotros</a></li>
+                                <li><a href="#services"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Servicios</a></li>
+                                <li><a href="#testimonials"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Testimonios</a></li>
+                                <li><a href="#contact"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Services Links -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-links-column">
+                            <h4 class="footer-column-title">
+                                Servicios
+                                <i class="fas fa-chevron-down dropdown-indicator"></i>
+                            </h4>
+                            <ul class="footer-links-list">
+                                <li><a href="services.html#pauta-digital"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Pauta Digital</a></li>
+                                <li><a href="services.html#creacion-contenido"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Creación de Contenido</a></li>
+                                <li><a href="services.html#community-management"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Community Management</a></li>
+                                <li><a href="services.html#manejo-inversion"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Manejo de Inversión</a></li>
+                                <li><a href="services.html#analisis-reportes"><span class="link-icon"><i class="fas fa-chevron-right"></i></span>Análisis y Reportes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact-column">
+                            <h4 class="footer-column-title">
+                                Contacto
+                                <i class="fas fa-chevron-down dropdown-indicator"></i>
+                            </h4>
+                            <div class="footer-contact-items">
+                                <div class="footer-contact-item">
+                                    <div class="contact-icon-glow">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">Email</span>
+                                        <a href="mailto:hola@lighthouseagency.com">hola@lighthouseagency.com</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <div class="contact-icon-glow">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">WhatsApp</span>
+                                        <a href="https://wa.me/50235971926">+502 3597-1926</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <div class="contact-icon-glow">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-detail">
+                                        <span class="contact-label">Ubicación</span>
+                                        <span>Ciudad de Guatemala</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom-premium">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright-text">
+                            &copy; 2026 Light House Agency. Todos los derechos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">Política de Privacidad</a>
+                            <span class="separator">|</span>
+                            <a href="#">Términos de Servicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="footer-decoration footer-decoration-1"></div>
+        <div class="footer-decoration footer-decoration-2"></div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+        <div class="back-to-top-glow"></div>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <div class="whatsapp-tooltip" id="whatsappTooltip">
+            <span>¿Necesitas ayuda?</span>
+            <p>¡Escríbenos por WhatsApp!</p>
+        </div>
+        <a href="https://wa.me/50235971926?text=Hola,%20necesito%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
