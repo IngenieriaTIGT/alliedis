@@ -1504,6 +1504,114 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
+    // ORBIT ICONS - Línea guía desde el faro
+    // ===================================
+    var sphereContainer = document.querySelector('.marketing-sphere-container');
+    var orbitIcons = document.querySelectorAll('.orbit-icon');
+
+    if (sphereContainer && orbitIcons.length > 0) {
+
+        // Crear SVG overlay para las líneas
+        var guideSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        guideSvg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:20;overflow:visible;';
+        sphereContainer.style.position = 'relative';
+        sphereContainer.appendChild(guideSvg);
+
+        // Crear la línea (oculta por defecto)
+        var guideLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        guideLine.setAttribute('stroke', '#F4A300');
+        guideLine.setAttribute('stroke-width', '2');
+        guideLine.setAttribute('stroke-dasharray', '6,4');
+        guideLine.setAttribute('opacity', '0');
+        guideLine.style.transition = 'opacity 0.3s ease';
+        guideSvg.appendChild(guideLine);
+
+        // Crear punto de inicio en el faro (círculo pequeño)
+        var dotStart = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dotStart.setAttribute('r', '5');
+        dotStart.setAttribute('fill', '#F4A300');
+        dotStart.setAttribute('opacity', '0');
+        dotStart.style.transition = 'opacity 0.3s ease';
+        guideSvg.appendChild(dotStart);
+
+        // Crear punto final en el icono
+        var dotEnd = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dotEnd.setAttribute('r', '5');
+        dotEnd.setAttribute('fill', '#F4A300');
+        dotEnd.setAttribute('opacity', '0');
+        dotEnd.style.transition = 'opacity 0.3s ease';
+        guideSvg.appendChild(dotEnd);
+
+        // Función para obtener el centro de un elemento relativo al contenedor
+        function getCenterRelativeTo(element, container) {
+            var elRect = element.getBoundingClientRect();
+            var containerRect = container.getBoundingClientRect();
+            return {
+                x: elRect.left - containerRect.left + elRect.width / 2,
+                y: elRect.top - containerRect.top + elRect.height / 2
+            };
+        }
+
+        // Función para mostrar la línea
+        function showGuideLine(iconEl) {
+            var sphereCore = sphereContainer.querySelector('.sphere-core');
+            if (!sphereCore) return;
+
+            var centerPos = getCenterRelativeTo(sphereCore, sphereContainer);
+            var iconPos = getCenterRelativeTo(iconEl, sphereContainer);
+
+            guideLine.setAttribute('x1', centerPos.x);
+            guideLine.setAttribute('y1', centerPos.y);
+            guideLine.setAttribute('x2', iconPos.x);
+            guideLine.setAttribute('y2', iconPos.y);
+            guideLine.setAttribute('opacity', '0.9');
+
+            dotStart.setAttribute('cx', centerPos.x);
+            dotStart.setAttribute('cy', centerPos.y);
+            dotStart.setAttribute('opacity', '1');
+
+            dotEnd.setAttribute('cx', iconPos.x);
+            dotEnd.setAttribute('cy', iconPos.y);
+            dotEnd.setAttribute('opacity', '1');
+
+            // Resaltar el icono
+            iconEl.style.boxShadow = '0 0 30px rgba(244, 163, 0, 0.9), 0 0 60px rgba(244, 163, 0, 0.5)';
+            iconEl.style.transform = 'scale(1.25)';
+            iconEl.style.borderColor = '#FFB833';
+        }
+
+        // Función para ocultar la línea
+        function hideGuideLine(iconEl) {
+            guideLine.setAttribute('opacity', '0');
+            dotStart.setAttribute('opacity', '0');
+            dotEnd.setAttribute('opacity', '0');
+
+            iconEl.style.boxShadow = '';
+            iconEl.style.transform = '';
+            iconEl.style.borderColor = '';
+        }
+
+        // Animar el dash de la línea
+        var dashOffset = 0;
+        function animateDash() {
+            dashOffset -= 1;
+            guideLine.setAttribute('stroke-dashoffset', dashOffset);
+            requestAnimationFrame(animateDash);
+        }
+        animateDash();
+
+        // Eventos hover en cada icono
+        orbitIcons.forEach(function(icon) {
+            icon.addEventListener('mouseenter', function() {
+                showGuideLine(icon);
+            });
+            icon.addEventListener('mouseleave', function() {
+                hideGuideLine(icon);
+            });
+        });
+    }
+
+    // ===================================
     // Services Page - Animaciones Secuenciales
     // ===================================
     var servicesHero = document.querySelector('.services-hero');
