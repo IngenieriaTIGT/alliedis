@@ -1,0 +1,28 @@
+# Robots.txt para Light House Agency
+# https://lighthousestudioagency.com/
+
+User-agent: *
+Allow: /
+
+# Archivos disallowed
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+
+# Sitemap
+Sitemap: https://lighthousestudioagency.com/sitemap.xml
+
+# Reglas adicionales para crawlers
+Crawl-delay: 1
+
+# User-agent para Google
+User-agent: Googlebot
+Allow: /
+Disallow: /css/
+Disallow: /js/
+
+# User-agent para Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /css/
+Disallow: /js/
