@@ -145,7 +145,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    margin-bottom: 35px;
+    margin-bottom: 20px; /* ← era 35px */
 }
 
 .feature-item {
@@ -225,11 +225,11 @@
 .services-cta-content p {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 35px;
+    margin-bottom: 20px; /* ← era 35px */
 }
 
 .btn-lg {
-    padding: 18px 45px;
+    padding: 14px 40px; /* ← era 18px 45px */
     font-size: 18px;
 }
 
